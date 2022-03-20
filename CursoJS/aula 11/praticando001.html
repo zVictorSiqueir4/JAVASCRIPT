@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRATICANDO</title>
+    <style>
+        #pesotxt{
+            margin-left: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>IMC</h1>
+    <p>Informe seu <strong>Peso</strong>: <input type="number" name="pesotxt" id="pesotxt"></p>
+    Informe sua <strong>Altura</strong>: <input type="number" name="alttxt" id="alttxt">
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <div id="resu">
+
+    </div>
+
+    <script>
+        function calcular(){
+            var peso = window.document.getElementById('pesotxt')
+            var alt = window.document.getElementById('alttxt')
+            var res = window.document.getElementById('resu')
+            var imc = Number(peso.value) && (alt.value)
+
+            imc = peso / (alt * alt)
+
+            res.innerHTML = `<p>Seu IMC é <strong>${imc}.</strong></p>`
+        }
+    </script>
+</body>
+</html>
