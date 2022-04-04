@@ -11,7 +11,7 @@
     <p>Diga-me sua idade: <input type="number" name="txtidade" id="txtidade"></p>
     <input type="button" value="Checar" onclick="checar()">
     <div id="res">
-
+        
     </div>
 
     <script>
@@ -19,12 +19,12 @@
             var idade = window.document.getElementById('txtidade')
             var res = window.document.getElementById('res')
 
-            res.innerHTML = `Você tem ${idade} anos.`
+            res.innerHTML = `Você tem ${idade.value} anos.`
 
-            if(idade < 16){
+            if(idade.value < 16){
                 res.innerHTML = 'Não vota'
-            }else if(idade >= 16 && idade < 18 || idade > 65){
-                innerHTML = 'Voto opcional'
+            }else if(idade.value >= 16 && idade.value < 18 || idade.value > 65){
+                res.innerHTML = 'Voto opcional'
             }else{
                 res.innerHTML = 'Voto obrigatório'
             }
